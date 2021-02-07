@@ -1,0 +1,23 @@
+<li
+  class="flex flex-wrap items-start rounded-lg border-2 border-gray-300 px-5 py-3 text-base text-white transition ease-in-out duration-150 cursor-pointer hover:bg-gray-800 hover:border-blue-500 bg-gray-700"
+  (click)="toogle()">
+  <div class="flex w-full font-semibold">
+    <span class="material-icons mr-4">
+      {{ icon }}
+    </span>
+    {{ title }}
+    <div class="ml-auto mt-0.5 pl-4">
+      <svg class="h-5 w-5" [ngClass]="{'transform rotate-90': expanded === false }" viewBox="0 0 20 20"
+        fill="currentColor">
+        <path fill-rule="evenodd"
+          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </div>
+  </div>
+  <div class="flex w-full" *ngIf="expanded">
+    <p class="border-t-2 border-gray-300 mt-2 pt-2 w-full">
+      {{ description }}
+    </p>
+  </div>
+</li>

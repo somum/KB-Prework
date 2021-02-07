@@ -1,0 +1,29 @@
+<div class="grid grid-cols-1 relative rounded overflow-hidden bg-gray-100" style="height: 450px">
+    <owl-carousel-o [options]="customOptions" (translated)="getPassedData($event)" (change)="getChangeData($event)"
+        (changed)="getChangedData($event)" #owlCar>
+        <ng-container *ngFor="let slide of carouselData">
+            <ng-template carouselSlide [id]="slide.id">
+                <div class="slide">
+                    <img [src]="slide.src" [alt]="slide.alt" [title]="slide.title"
+                        style="height: 450px; width: 100%; object-fit: cover" />
+                </div>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+    <button type="button" style="z-index: 1; margin-top: 220px; margin-left: 20px" (click)="owlCar.prev()"
+        class="absolute top-0 left-0 inline-flex items-center rounded-full shadow-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-10 w-10">
+            <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z"
+                clip-rule="evenodd" />
+        </svg>
+    </button>
+    <button type="button" style="z-index: 1; margin-top: 220px; margin-right: 20px" (click)="owlCar.next()"
+        class="absolute top-0 right-0 inline-flex items-center rounded-full shadow-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-10 w-10">
+            <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                clip-rule="evenodd" />
+        </svg>
+    </button>
+</div>

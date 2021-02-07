@@ -1,0 +1,9 @@
+<p>searchproduct works!</p>
+
+<input type="text" (keyup)="searchTerm$.next($event.target.value)">
+
+<ul *ngIf="results">
+    <li *ngFor="let result of results">
+        {{ result.title }}
+    </li>
+</ul>

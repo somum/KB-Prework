@@ -1,0 +1,168 @@
+<header class="text-gray-700 bg-white border-t border-b body-font">
+    <div class="container flex flex-wrap mx-auto items-center flex-row py-5 px-8">
+        <nav class="flex flex-wrap items-center justify-center">
+            <!-- DROPDOWN START -->
+            <div class="li">
+                <div class="cursor-pointer mr-8 font-semibold text-gray-800 hover:text-gray-900 flex">Categories
+                    <svg class="flex m-auto h-5 w-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </div>
+                <div class="main-menu z-10 ul origin-top-right absolute w-56 pt-3" role="menu"
+                    aria-orientation="vertical" aria-labelledby="options-menu">
+                    <div class="shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100">
+                        <div class="py-1">
+                            <!-- <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                role="menuitem">Archive</a>-->
+                            <!-- Menu with submenu -->
+                            <div class="li cursor-pointer block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                role="menuitem">
+                                <button type="button" class="w-full text-left">
+                                    Beauty Tools
+                                    <svg class="flex-shrink-0 float-right h-5 w-5" fill="currentColor"
+                                        viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <div class="ul origin-top-right absolute right-0 top-0 w-56 shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100"
+                                    role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                                    <div class="py-1" *ngFor="let item of tagsArray">
+                                        <a href="" routerLink="/Category/{{item}}"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                            role="menuitem">{{item}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <a href="#"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                role="menuitem">Edit</a> -->
+                            <!-- Menu with submenu -->
+                            <div class="li cursor-pointer block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                role="menuitem">
+                                <button type="button" class="w-full text-left">
+                                    Hair care
+                                    <svg class="flex-shrink-0 float-right h-5 w-5" fill="currentColor"
+                                        viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <div class="ul origin-top-right absolute right-0 top-0 w-56 shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100"
+                                    role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                                    <div class="py-1">
+                                        <a href="#"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                            role="menuitem">X product</a>
+                                    </div>
+                                    <div class="py-1">
+                                        <a href="#"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                            role="menuitem">Y product</a>
+                                    </div>
+                                    <div class="py-1">
+                                        <a href="#"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                            role="menuitem">Z product</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Menu with submenu -->
+                            <div class="li cursor-pointer block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                role="menuitem">
+                                <button type="button" class="w-full text-left">
+                                    Skin Care
+                                    <svg class="flex-shrink-0 float-right h-5 w-5" fill="currentColor"
+                                        viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <div class="ul origin-top-right absolute right-0 top-0 w-56 shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100"
+                                    role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                                    <div class="py-1">
+                                        <a href="#"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                            role="menuitem">X product</a>
+                                    </div>
+                                    <div class="py-1">
+                                        <a href="#"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                            role="menuitem">Y product</a>
+                                    </div>
+                                    <div class="py-1">
+                                        <a href="#"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                            role="menuitem">Z product</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Menu with submenu -->
+                            <div class="li cursor-pointer block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                role="menuitem">
+                                <button type="button" class="w-full text-left">
+                                    Bath & Body
+                                    <svg class="flex-shrink-0 float-right h-5 w-5" fill="currentColor"
+                                        viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                                <div class="ul origin-top-right absolute right-0 top-0 w-56 shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-y divide-gray-100"
+                                    role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                                    <div class="py-1">
+                                        <a href="#"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                            role="menuitem">X product</a>
+                                    </div>
+                                    <div class="py-1">
+                                        <a href="#"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                            role="menuitem">Y product</a>
+                                    </div>
+                                    <div class="py-1">
+                                        <a href="#"
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-600"
+                                            role="menuitem">Z product</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- DROPDOWN END -->
+        </nav>
+        <div class="flex ml-auto">
+            <a href="#" class="mr-8 font-semibold text-gray-800 hover:text-gray-900 flex">Seminar
+                <svg class="flex m-auto h-5 w-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+            </a>
+            <a href="#" class="mr-8 font-semibold text-gray-800 hover:text-gray-900 flex">Rinten TV
+                <svg class="flex m-auto h-5 w-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+            </a>
+            <a href="#" class="mr-8 font-semibold text-gray-800 hover:text-gray-900 flex">Video
+                <svg class="flex m-auto h-5 w-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</header>

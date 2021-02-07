@@ -1,0 +1,27 @@
+.pagination /deep/ .ngx-pagination .current {
+    background-color: #547faf;
+    color: white;
+    border: 1px solid #547faf;
+  }
+
+  /* .pagination /deep/ .ngx-pagination li {
+    border: 1px solid #CCCC;
+    border-radius: 2px;
+    margin-right: 0px;
+  }
+
+   .pagination /deep/ .ngx-pagination a::after{
+     display: none;
+   }
+
+   .pagination /deep/ .ngx-pagination li::before{
+     display: none;
+   }
+
+    .pagination /deep/ .ngx-pagination li::after{
+     display: none;
+   }
+
+    .pagination /deep/ .ngx-pagination a::before{
+     display: none;
+   } */

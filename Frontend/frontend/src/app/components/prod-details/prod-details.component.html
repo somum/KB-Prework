@@ -1,0 +1,428 @@
+<!--
+<div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
+        <div class="grid grid-flow-col grid-rows-1 grid-cols-5 gap-6">
+            <div class="col-span-2">
+                <div>
+                    <div class="h-96 rounded-lg bg-gray-100 mb-4">
+                        <div class="h-96 rounded-lg bg-gray-100 mb-4 flex items-center justify-center">
+                            <img class="h-96 rounded-lg w-half object-cover" src="{{ images[active].src }}" />
+                        </div>
+                    </div>
+
+                    <div class="grid gap-4 grid-cols-4">
+                        <div class="flex" *ngFor="let item of images; index as i">
+                            <button (click)="active = i" [ngClass]="{
+                    'ring-4': active === i,
+                    'ring-blue-300': active === i
+                  }" class="focus:outline-none w-full rounded-lg h-32 bg-gray-100 flex items-center justify-center">
+                                <img class="h-32 rounded-lg w-full object-cover" src="{{ item.src }}" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-2">
+                <h2 class="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">
+                    {{collection.title}}
+                </h2>
+                <p class="text-gray-500 text-sm">
+                    By <a href="#" class="text-indigo-600 hover:underline">AIMH</a>
+                </p>
+
+                <div class="flex items-center space-x-4 my-4">
+                    <div>
+                        <div class="rounded-lg bg-gray-100 flex py-2 px-3">
+                            <span class="text-indigo-400 mr-1 mt-1"><span>&#165;</span></span>
+                            <span class="font-bold text-indigo-600 text-3xl">{{collection.price}}</span>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-green-500 text-xl font-semibold">Save 12%</p>
+                        <p class="text-gray-400 text-sm">Inclusive of all Taxes.</p>
+                    </div>
+                </div>
+
+                <ul class="grid sm:grid-cols-1 gap-1">
+                    <li class="flex">
+                        <div class="font-semibold text-gray-800 w-36">Product ID:</div>
+                        <div class="font-semibold text-gray-600">{{collection.id}}</div>
+                    </li>
+                    <li class="flex">
+                        <div class="font-semibold text-gray-800 w-36">JAN Code:</div>
+                        <div class="font-semibold text-gray-600">4580042000092</div>
+                    </li>
+                    <li class="flex">
+                        <div class="font-semibold text-gray-800 w-36">Contents:</div>
+                        <div class="font-semibold text-gray-600">1000ml</div>
+                    </li>
+                    <li class="flex">
+                        <div class="font-semibold text-gray-800 w-36">Number of stock:</div>
+                        <div class="font-semibold text-gray-600">12</div>
+                    </li>
+                    <li class="flex">
+                        <div class="font-semibold text-gray-800 w-36">Manufacturer:</div>
+                        <div class="font-semibold text-gray-600">AIMH</div>
+                    </li>
+                </ul>
+
+                <p class="text-gray-500 my-5">
+                    {{collection.description}}
+                </p>
+
+                <div class="flex py-4 space-x-4">
+                    <div class="relative">
+                        <div
+                            class="text-center left-0 pt-2 right-0 absolute block text-xs uppercase text-gray-400 tracking-wide font-semibold">
+                            Quantity
+                        </div>
+                        <input type="number" value="1" min="1"
+                            class="cursor-pointer appearance-none rounded-xl border border-gray-200 w-20 h-14 flex items-end pb-1 pt-4 text-center" />
+                    </div>
+
+                    <button type="button"
+                        class="h-14 px-10 py-2 font-semibold rounded-xl bg-gray-800 hover:bg-gray-500 text-white">
+                        Add to Cart
+                    </button>
+                    <button type="button"
+                        class="h-14 px-6 py-2 font-semibold rounded-xl bg-red-600 hover:bg-red-500 text-white flex items-center">
+                        <span class="material-icons"> favorite </span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="w-100 p-2 rounded border border-gray-300">
+                        <img src="https://www.micol.life/assets/img/banner/banner-top-001.jpg" />
+                    </div>
+                    <div class="w-100 p-2 rounded border border-gray-300">
+                        <img src="https://www.micol.life/assets/img/banner/banner-top-001.jpg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-10 mt-20 flex">
+            <div
+                class="w-12 h-12 rounded-xl bg-gradient-to-br flex items-center justify-center from-red-400 to-pink-600">
+                <svg class="h-12 w-12 text-white p-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+                </svg>
+            </div>
+            <p
+                class="text-3xl text-2xl leading-none font-bold text-gray-900 tracking-tight uppercase ml-5 flex items-center">
+                Recommendations
+            </p>
+        </div>
+        <div class="grid gap-4 grid-cols-5 mb-20">
+            <a href="#"
+                class="flex-shrink-0 relative overflow-hidden rounded-lg max-w-xs shadow-lg bg-gray-200 hover:bg-gray-50 transition duration-500 ease-in-out"
+                *ngFor="let item of products">
+                <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
+                    style="transform: scale(1.5); opacity: 0.1">
+                    <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)"
+                        fill="white"></rect>
+                    <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white">
+                    </rect>
+                </svg>
+                <div class="relative pt-10 px-10 flex items-center justify-center">
+                    <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3" style="
+                background: radial-gradient(black, transparent 60%);
+                transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1);
+                opacity: 0.2;
+              "></div>
+                    <img class="relative w-40 zoom" src="{{ item.src }}" alt="" />
+                </div>
+                <div class="relative text-gray-800 px-6 pb-6 mt-6">
+                    <span class="block opacity-75 -mb-1">Indoor</span>
+                    <div class="flex justify-between">
+                        <span class="block font-semibold text-xl">Peace Lily</span>
+                        <span
+                            class="block bg-gray-800 text-white rounded-full text-xs font-bold px-3 py-2 leading-none flex items-center"><span>&#165;</span>36.00</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div> -->
+
+<div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
+        <div class="grid grid-flow-col grid-rows-1 grid-cols-5 gap-6">
+            <div class="col-span-2">
+                <div>
+                    <div class="h-96 rounded-lg bg-gray-100">
+                        <div class="h-96 rounded-lg bg-gray-100 flex items-center justify-center">
+                            <img class="h-96 rounded-lg w-half object-cover cursor-pointer hover:opacity-75"
+                                (click)="tooglePortal()" src="{{ images[active].src }}" />
+                        </div>
+                    </div>
+                    <h1 class="text-blue-600 font-semibold text-sm text-center my-2">
+                        Click image to see related products
+                    </h1>
+                    <div class="grid gap-4 grid-cols-4">
+                        <div class="flex" *ngFor="let item of images; index as i">
+                            <button (click)="active = i" [ngClass]="{
+                    'ring-4': active === i,
+                    'ring-blue-300': active === i
+                  }" class="focus:outline-none w-full rounded-lg h-32 bg-gray-100 flex items-center justify-center">
+                                <img class="h-32 rounded-lg w-full object-cover" src="{{ item.src }}" />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-2 relative">
+                <h2 class="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl">
+                    {{collection.title}}
+                </h2>
+                <p class="text-gray-500 text-sm">
+                    By <a href="#" class="text-indigo-600 hover:underline">AIMH</a>
+                </p>
+
+                <div class="flex items-center space-x-4 my-4">
+                    <div>
+                        <div class="rounded-lg bg-gray-100 flex py-2 px-3">
+                            <span class="text-indigo-400 mr-1 mt-1"><span>&#165;</span></span>
+                            <span class="font-bold text-indigo-600 text-3xl">{{collection.price}}</span>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-green-500 text-xl font-semibold">Save 12%</p>
+                        <p class="text-gray-400 text-sm">Inclusive of all Taxes.</p>
+                    </div>
+                </div>
+
+                <ul class="grid sm:grid-cols-1 gap-2">
+                    <li class="flex">
+                        <div class="font-semibold text-gray-800 w-36 flex-shrink-0">
+                            Product ID
+                        </div>
+                        <div class="font-semibold text-gray-600">{{collection.id}}</div>
+                    </li>
+                    <li class="flex">
+                        <div class="font-semibold text-gray-800 w-36 flex-shrink-0">
+                            JAN Code
+                        </div>
+                        <div class="font-semibold text-gray-600">4580042000092</div>
+                    </li>
+                    <li class="flex">
+                        <div class="font-semibold text-gray-800 w-36 flex-shrink-0">
+                            Contents
+                        </div>
+                        <div class="font-semibold text-gray-600">1000ml</div>
+                    </li>
+                    <li class="flex">
+                        <div class="font-semibold text-gray-800 w-36 flex-shrink-0">
+                            Number of stock
+                        </div>
+                        <div class="font-semibold text-gray-600">12</div>
+                    </li>
+                    <li class="flex">
+                        <div class="font-semibold text-gray-800 w-36 flex-shrink-0">
+                            Manufacturer
+                        </div>
+                        <div class="font-semibold text-gray-600">AIMH</div>
+                    </li>
+                    <li class="flex">
+                        <div class="font-semibold text-gray-800 w-36 flex-shrink-0">
+                            Applications
+                        </div>
+                        <div class="font-semibold text-gray-600">
+                            Hair Color (Professional) /Hair color (for business use) 1 agent
+                        </div>
+                    </li>
+                    <li class="flex">
+                        <div class="font-semibold text-gray-800 w-36 flex-shrink-0">
+                            Rating
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="text-yellow-500 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"
+                                *ngFor="let i of [].constructor(star(collection.rating))">
+                                <path
+                                    d="M9.05 3.691c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.372 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.363-1.118l-2.8-2.034c-.784-.57-.381-1.81.587-1.81H7.03a1 1 0 00.95-.69L9.05 3.69z">
+                                </path>
+                            </svg>
+                            <svg class="text-gray-500 h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"
+                                *ngFor="let i of [].constructor(blank(collection.rating))">
+                                <path
+                                    d="M9.05 3.691c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.372 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.363-1.118l-2.8-2.034c-.784-.57-.381-1.81.587-1.81H7.03a1 1 0 00.95-.69L9.05 3.69z">
+                                </path>
+                            </svg>
+                        </div>
+                    </li>
+                    <li class="flex">
+                        <div class="font-semibold text-gray-800 w-36 flex-shrink-0">
+                            Color
+                        </div>
+                        <div class="flex items-center">
+                            <div class="h-4 w-4 mr-3 ml-1 rounded-full bg-blue-500 ring-2 ring-offset-2 ring-gray-500">
+                            </div>
+                            <div class="h-4 w-4 mr-3 ml-1 rounded-full bg-green-500 ring-2 ring-offset-2 ring-gray-500">
+                            </div>
+                            <div
+                                class="h-4 w-4 mr-3 ml-1 rounded-full bg-yellow-500 ring-2 ring-offset-2 ring-gray-500">
+                            </div>
+                            <div class="h-4 w-4 mr-3 ml-1 rounded-full bg-gray-500 ring-2 ring-offset-2 ring-gray-500">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="flex space-x-4 absolute bottom-0">
+                    <div class="relative">
+                        <div
+                            class="text-center left-0 pt-2 right-0 absolute block text-xs uppercase text-gray-400 tracking-wide font-semibold">
+                            Quantity
+                        </div>
+                        <input type="number" value="1" min="1"
+                            class="cursor-pointer appearance-none rounded-xl border border-gray-200 w-20 h-14 flex items-end pb-1 pt-4 text-center" />
+                    </div>
+
+                    <button type="button"
+                        class="h-14 px-10 py-2 font-semibold rounded-xl bg-gray-800 hover:bg-gray-500 text-white flex items-center focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2">
+                        <svg class="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        Add to Cart
+                    </button>
+                    <button type="button"
+                        class="h-14 px-6 py-2 font-semibold rounded-xl bg-red-600 hover:bg-red-500 text-white flex items-center focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2">
+                        <span class="material-icons"> favorite </span>
+                    </button>
+                </div>
+            </div>
+            <div class="col-span-1">
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="w-100 p-2 rounded border border-gray-300">
+                        <img src="https://www.micol.life/assets/img/banner/banner-top-001.jpg" />
+                    </div>
+                    <div class="w-100 p-2 rounded border border-gray-300">
+                        <img src="https://www.micol.life/assets/img/banner/banner-top-001.jpg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-10  max-w-3xl">
+            <h1 class="text-2xl leading-none font-bold text-gray-900 tracking-wide uppercase mb-5 flex items-center">
+                <svg class="h-8 w-8 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                </svg>
+                About this item
+            </h1>
+            <ul class="list-disc font-semibold text-gray-600 ml-5">
+                <li>{{collection.description}}</li>
+
+            </ul>
+        </div>
+        <!-- test -->
+        <div class="my-20">
+            <div class="my-10 flex">
+                <div
+                    class="w-10 h-10 rounded-xl bg-gradient-to-br flex items-center justify-center from-red-400 to-pink-600">
+                    <svg class="h-10 w-10 text-white p-1" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+                    </svg>
+                </div>
+                <p class="text-2xl leading-none font-bold text-gray-900 tracking-wide uppercase ml-5 flex items-center">
+                    Recommendations (Popular item)
+                </p>
+            </div>
+
+            <div class="w-100 mb-10 relative">
+                <owl-carousel-o [options]="customOptions" (translated)="getPassedData($event)"
+                    (change)="getChangeData($event)" (changed)="getChangedData($event)" #owlCar1>
+                    <ng-container *ngFor="let item of SuggestUsersCollection">
+                        <ng-template carouselSlide [id]="item.id">
+                            <div class="slide mx-2">
+                                <app-productcard [name]="item.title" [itemid]="item.id" [src]="item.imageLink"
+                                    [category]=" item.tags " [price]=" item.price " [rating]=" item.rating ">
+                                </app-productcard>
+                            </div>
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+                <button type="button" style="z-index: 1; margin-top: 130px; margin-left: -15px;"
+                    (click)="owlCar1.prev()"
+                    class="absolute top-0 left-0 inline-flex items-center rounded-full shadow-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-12 w-12">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <button type="button" style="z-index: 1; margin-top: 130px; margin-right: -15px;"
+                    (click)="owlCar1.next()"
+                    class="absolute top-0 right-0 inline-flex items-center rounded-full shadow-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-900">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-12 w-12">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 1.414L10.586 9H7a1 1 0 100 2h3.586l-1.293 1.293a1 1 0 101.414 1.414l3-3a1 1 0 000-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+
+
+
+
+        </div>
+        <!-- test End-->
+    </div>
+
+    <!-- PORTAL START -->
+    <div class="fixed inset-0 overflow-hidden" *ngIf="portal">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <section class="absolute inset-y-0 right-0 w-full flex" aria-labelledby="slide-over-heading">
+                <div class="relative flex w-full" (click)="tooglePortal()"></div>
+                <div class="relative flex flex-shrink-0 w-3xl" style="width: 800px;">
+                    <div class="absolute top-0 left-0 -ml-10 bg-white pt-4 flex pr-4 pb-4 pl-2 rounded-bl-lg">
+                        <button
+                            class="rounded-md text-gray-500 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                            (click)="tooglePortal()">
+                            <svg class="h-6 w-6" x-description="Heroicon name: x" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <perfect-scrollbar style="max-width: 100%; max-height: 100vh;">
+                        <div class="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
+                            <div class="px-4 sm:px-6">
+                                <h2 id="slide-over-heading" class="text-lg font-medium text-gray-900">
+                                    Visually similar Products
+                                </h2>
+                            </div>
+                            <div class="mt-6 relative flex-1 px-4 sm:px-6">
+                                <!-- Replace with your content -->
+                                <div class="grid gap-4 grid-cols-3" id="portal">
+                                    <app-productcard *ngFor="let item of visualSimilarList" [name]="item.title"
+                                        [itemid]="item.id" [src]="item.imageLink" [category]=" item.tags "
+                                        [price]=" item.price " [rating]=" item.rating ">
+                                    </app-productcard>
+                                </div>
+                                <!-- /End replace -->
+                            </div>
+                        </div>
+                    </perfect-scrollbar>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- PORTAL END -->
+</div>

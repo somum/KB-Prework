@@ -1,0 +1,28 @@
+<div class="mb-6">
+    <h1 class="text-base font-medium text-gray-900 border-b pb-4 mb-4 flex">
+        <span class="material-icons mr-2">
+            {{icon}}
+        </span>
+        {{title}}
+    </h1>
+    <div class="space-y-3">
+        <div class="flex items-start" *ngFor="let item of warrantyArray; index as i"
+            [ngClass]="{'hidden': i > showBrandsAmount - 1}">
+            <div class="flex items-center h-5">
+                <input id="{{item}}" value="{{item}}" name="{{item}}" (change)="onCheckbox($event)" type="checkbox"
+                    [disabled]="isChecked && (isCheckedVal!=item)"
+                    class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded">
+            </div>
+            <div class="ml-3 text-sm">
+                <label for="{{item.value}}" class="font-medium text-gray-700">{{item}}</label>
+            </div>
+        </div>
+        <h4 class="font-semibold text-indigo-600 hover:text-indigo-700 cursor-pointer mt-5 text-sm"
+            (click)="setShowBrandsAmount()">View {{this.showBrandsAmount === this.warrantyArray.length ? 'Less -' :
+            'More
+            +'}}
+        </h4>
+    </div>
+
+
+</div>

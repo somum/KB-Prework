@@ -1,0 +1,109 @@
+<!-- <div
+    class="block flex-shrink-0 relative overflow-hidden rounded-lg max-w-xs shadow-lg bg-gray-200 hover:bg-blue-500 text-gray-800 hover:text-white transition duration-200 ease-in-out">
+    <svg style="z-index: 3;"
+        class="cursor-pointer h-8 w-8 p-2 border border-gray-800 hover:bg-gray-800 text-gray-800 hover:text-white rounded-full absolute right-0 m-6"
+        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+    </svg>
+    <a href="" routerLink="/prod-details/{{itemid}}"
+        class="block flex-shrink-0 relative overflow-hidden rounded-lg max-w-xs shadow-lg bg-gray-200 hover:bg-blue-200 text-gray-800 hover:text-gray-800 transition duration-200 ease-in-out">
+        <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
+            style="transform: scale(1.5); opacity: 0.1">
+            <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white">
+            </rect>
+            <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white"></rect>
+        </svg>
+        <div class="relative pt-10 px-10 flex items-center justify-center">
+            <img class="relative w-40 zoom" src="{{ src }}" alt="" />
+        </div>
+        <div class="relative px-6 pb-6 mt-6">
+            <span class="block opacity-75 -mb-1">{{ category }}</span>
+            <div class="flex justify-between">
+                <span class="block font-semibold text-xl">{{ name | slice:0:9}}..</span>
+                <span
+                    class="block bg-gray-800 text-white rounded-full text-xs font-bold px-3 py-2 leading-none flex items-center">${{
+                    price }}</span>
+            </div>
+        </div>
+    </a>
+</div> -->
+
+<a routerLink="/prod-details/{{itemid}}"
+    class="border border-gray-200 rounded-md overflow-hidden transition duration-300 ease-in-out block">
+    <div
+        class="h-56 bg-gray-100 relative hover:bg-blue-300 text-gray-800 hover:text-white transition duration-200 ease-in-out">
+        <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
+            style="transform: scale(1); opacity: 0.1">
+            <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white">
+            </rect>
+            <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white"></rect>
+        </svg>
+        <div class="relative flex items-center justify-center h-56">
+            <img class="relative h-56 object-fit m-auto py-4 px-8" src="{{src}}" alt="" />
+        </div>
+        <div class="absolute bottom-0 px-4 py-2">
+            <span
+                class="transform -rotate-90 uppercase flex items-center justify-center py-1 px-3 bg-yellow-500 text-white font-semibold text-xs mb-5 -ml-5">
+                Stock
+            </span>
+        </div>
+        <div class="absolute top-0 right-0 px-4 py-2">
+            <span
+                class="flex items-center justify-center bg-red-500 text-white font-semibold text-xs rounded-full w-10 h-10">
+                -20%
+            </span>
+        </div>
+    </div>
+    <div class="grid grid-cols-1">
+        <div class="col-start-1 px-5 my-2">
+            <div class="min-w-0 flex-auto space-y-0.5 my-2">
+                <h2 class="text-black text-sm font-semibold truncate">
+                    {{ name }}
+                </h2>
+                <div class="text-gray-500 text-sm font-medium flex items-center">
+                    <svg class="h-5 w-5 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 8l3 5m0 0l3-5m-3 5v4m-3-5h6m-6 3h6m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    {{ price }}
+                    <div class="ml-auto flex items-center">
+                        <svg class="text-yellow-500 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"
+                            *ngFor="let i of [].constructor(star(rating))">
+                            <path
+                                d="M9.05 3.691c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.372 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.363-1.118l-2.8-2.034c-.784-.57-.381-1.81.587-1.81H7.03a1 1 0 00.95-.69L9.05 3.69z">
+                            </path>
+                        </svg>
+                        <svg class="text-gray-500 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"
+                            *ngFor="let i of [].constructor(blank(rating))">
+                            <path
+                                d="M9.05 3.691c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.372 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.176 0l-2.8 2.034c-.783.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.363-1.118l-2.8-2.034c-.784-.57-.381-1.81.587-1.81H7.03a1 1 0 00.95-.69L9.05 3.69z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-start-1 space-y-3 mb-3 px-4">
+            <div class="button">
+                <a href="#">
+                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                </a>
+                <a href="#">
+                    <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</a>

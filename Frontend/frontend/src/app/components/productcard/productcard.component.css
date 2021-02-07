@@ -1,0 +1,71 @@
+.zoom {
+    transition: transform .2s;
+    transition-timing-function: ease-in-out;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.2);
+  }
+
+
+  .button {
+    display: flex;
+  }
+  
+  .button a {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    font-size: 11px;
+    color: #111;
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid #aaa;
+    font-weight: bold;
+    justify-content: center;
+  }
+  
+  .button a:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 0%;
+    background: #111;
+    height: 100%;
+    z-index: -1;
+    transition: width 0.3s ease-in-out;
+    transform: skew(-25deg);
+    transform-origin: right;
+  }
+  
+  .button a:hover:after {
+    width: 150%;
+    left: -10px;
+    transform-origin: left;
+  }
+  
+  .button a:hover {
+    color: #fff;
+    transition: all 0.5s ease;
+  }
+  
+  .button a:nth-of-type(1) {
+    border-radius: 50px 0 0 50px;
+    border-right: none;
+    display: flex;
+    width: 50%;
+  }
+  
+  .button a:nth-of-type(2) {
+    border-radius: 0px 50px 50px 0;
+    display: flex;
+    width: 50%;
+  }
+  
+  #portal .button a:hover {
+    background: #111 !important;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  

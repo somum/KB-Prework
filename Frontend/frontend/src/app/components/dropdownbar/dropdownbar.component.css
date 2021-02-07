@@ -1,0 +1,18 @@
+.main-menu {
+    right: 138px;
+  }
+  .li {
+    position: relative;
+  }
+  .li > .ul {
+    transform: translatex(100%) scale(0);
+  }
+  .li:hover > .ul {
+    transform: translatex(100%) scale(1);
+  }
+  .li > button svg {
+    transform: rotate(0deg);
+  }
+  .li:hover > button svg {
+    transform: rotate(-180deg);
+  }
