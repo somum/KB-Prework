@@ -2,7 +2,6 @@
 
 ###### This is an ongoing prework. Strictly prohibited to use without contributor's permission.
 
-For efficient use, a docker compose file is available in the backend part.
 
 ## Docker Image
 
@@ -22,3 +21,5 @@ docker pull somum/mysql
 ```bash
 docker pull somum/frontend-demo
 ```
+
+For efficient use, a docker compose file is available in the backend part.
