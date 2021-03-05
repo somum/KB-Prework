@@ -1,0 +1,1 @@
+python<space>MainWithCmd.py<space>C:\Users\User\Desktop\imageClassification\train_dir\33<space>cream.jpg
