@@ -1,0 +1,21 @@
+.badge {
+    padding-left: 9px;
+    padding-right: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+  }
+  
+  .label-warning[href],
+  .badge-warning[href] {
+    background-color: #c67605;
+  }
+  #lblCartCount {
+      font-size: 14px;
+      background: #ff0000;
+      color: rgb(255, 255, 255);
+      padding: 0px 4px;
+      vertical-align: top;
+      margin-left: -17px;
+      font-weight: bold;
+  }

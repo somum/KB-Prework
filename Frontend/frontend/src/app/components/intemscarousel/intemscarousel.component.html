@@ -136,7 +136,8 @@
     </div>
     <div class="grid gap-5 grid-cols-5 m-5">
       <app-productcard *ngFor="let item of collection | slice:0:30; let i=index " [name]="item.title" [itemid]="item.id"
-        [src]="item.imageLink" [category]=" item.tags " [price]=" item.price " [rating]=" item.rating ">
+        [src]="item.imageLink" [category]=" item.tags " [price]=" item.price " [rating]=" item.rating "
+        [product]="item">
       </app-productcard>
     </div>
   </div>

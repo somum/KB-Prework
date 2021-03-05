@@ -6,13 +6,20 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/operator/switchMap';
+import { Subject } from 'rxjs/Subject';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+    //cart
+    this.myCart$ = this.myCartSubject.asObservable();
+
+  }
 
   url = "http://localhost:9090/products"
   //search
@@ -45,19 +52,35 @@ export class ProductService {
     return this.http.get(`${this.categorybaseUrl}(tags:'${tags}')`)
   }
 
-  //product search
-  search(terms: Observable<string>) {
+  //product search(title based)
+  searchTitle(terms: Observable<string>) {
     return terms.debounceTime(400)
       .distinctUntilChanged()
-      .switchMap(term => this.searchEntries(term));
+      .switchMap(term => this.searchEntriesTitle(term));
   }
 
-  searchEntries(term) {
+  searchEntriesTitle(term) {
     console.log(this.baseUrl + this.queryUrl + term + this.endUrl)
     return this.http
       .get(this.baseUrl + this.queryUrl + term + this.endUrl)
       .map(res => res);
   }
+
+  //product search(All)
+  searchAll(terms: Observable<string>) {
+    return terms.debounceTime(400)
+      .distinctUntilChanged()
+      .switchMap(term => this.searchEntriesAll(term));
+  }
+
+  searchEntriesAll(term) {
+    console.log(this.baseUrl + this.queryUrl + term + this.endUrl)
+    return this.http
+      .get(`${this.categorybaseUrl}(title:*${term}*)OR(description:*${term}*)OR(tags:*${term}*)`)
+      .map(res => res);
+  }
+
+
 
   //Category product search
   categorySearch(terms: Observable<string>) {
@@ -105,6 +128,39 @@ export class ProductService {
     console.log(`${this.SuggestByUsersUrl}/${userId}`)
     return this.http.get(`${this.SuggestByUsersUrl}/${userId}`)
   }
+
+
+
+  //advanceSearchAudio
+
+  searchAdvanceListAudio(term) {
+    return this.http.get(this.baseUrl + this.queryUrl + term + this.endUrl)
+  }
+
+  //advanceSearchImage
+
+  searchAdvanceListImage(term) {
+    return this.http.get(`${this.categorybaseUrl}(id:'${term}')`)
+  }
+
+
+  //cart Information
+
+  myCart$: Observable<any>;
+  private myCartSubject = new Subject<any>();
+
+  myCart(data) {
+    console.log(data);
+    this.myCartSubject.next(data);
+  }
+
+
+  //user Information
+  userUrl: string = 'http://localhost:9090/registration'
+  getCurrentUser(id: any) {
+    return this.http.get(`${this.userUrl}/${id}`)
+  }
+
 
 
 

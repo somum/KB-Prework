@@ -188,11 +188,4 @@ export class ProdDetailsComponent implements OnInit {
 
 
 
-
-
-
-
-
-
-
 }

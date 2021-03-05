@@ -28,4 +28,6 @@ export class IntemscarouselComponent implements OnInit {
     { src: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F14%2F2020%2F09%2F03%2FBitten_Lip_Tint_104650_v1_SPL_940x940_c10352e1-f9c4-49e4-8a02-a05d40e4f434.png" },
   ]
 
+
+
 }

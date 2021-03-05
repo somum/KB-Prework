@@ -1,0 +1,48 @@
+<!-- Profile dropdown -->
+<div class="ml-3 relative">
+    <div (clickOutside)="setMenu(false)">
+        <button
+            class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none ring-2 ring-offset-2 ring-offset-gray-800 ring-white"
+            id="user-menu" aria-haspopup="true" (click)="setMenu(!menu)">
+            <img class="h-8 w-8 rounded-full" src="{{userInfo.userImg}}" alt="" />
+        </button>
+    </div>
+    <div class="origin-top-right absolute right-0 mt-2 w-60 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 z-50"
+        role="menu" aria-orientation="vertical" aria-labelledby="user-menu" *ngIf="menu">
+
+        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">
+            <img class="h-10 w-10 rounded-full mx-20" src="{{userInfo.userImg}}" alt="" />
+
+            <span class="text-lg font-bold text-black-400 mx-8">{{userInfo.firstName}} {{userInfo.lastName}}</span>
+            <div>
+                <span class="text-sm font-light text-gray-400 mx-6">{{userInfo.email}}</span>
+            </div>
+
+        </a>
+
+        <a href="#">
+            <div
+                class="rounded-full py-1 px-2 pl-9 border-2 border-gray-200 mx-4 text-sm text-gray-700 hover:bg-gray-100">
+                <div style="height: 20px; width: 20px;" class="float-right md:float-left ">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                </div>
+                <span class="p-1"> Account Settings</span>
+            </div>
+        </a>
+
+        <div class="my-5">
+
+            <a href="#" class="block px-6 py-2 text-sm text-gray-700 hover:bg-gray-100 float-right md:float-left "
+                role="menuitem">Order History</a>
+
+            <a href="#" class="block px-7 py-2 text-sm text-gray-700 hover:bg-gray-100 float-left md:float-right"
+                role="menuitem">Sign out</a>
+        </div>
+
+    </div>
+</div>

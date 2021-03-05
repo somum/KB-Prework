@@ -4,6 +4,8 @@ import { Ng5SliderModule } from 'ng5-slider';
 import { NgxPaginationModule } from 'ngx-pagination'
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { WebcamModule } from 'ngx-webcam';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,6 +35,10 @@ import { FilterWarrantyComponent } from './components/filter-warranty/filter-war
 import { PagenavigationComponent } from './components/pagenavigation/pagenavigation.component';
 import { DropdownbarComponent } from './components/dropdownbar/dropdownbar.component'
 
+import { ProductAdvanceSearchService } from './product-advance-search.service';
+import { CartComponent } from './cart/cart.component';
+import { UserComponent } from './user/user.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +63,9 @@ import { DropdownbarComponent } from './components/dropdownbar/dropdownbar.compo
     ProductcardComponent,
     FilterWarrantyComponent,
     PagenavigationComponent,
-    DropdownbarComponent
+    DropdownbarComponent,
+    CartComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -68,9 +76,10 @@ import { DropdownbarComponent } from './components/dropdownbar/dropdownbar.compo
     Ng5SliderModule,
     NgxPaginationModule,
     CarouselModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    WebcamModule,
   ],
-  providers: [],
+  providers: [ProductAdvanceSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

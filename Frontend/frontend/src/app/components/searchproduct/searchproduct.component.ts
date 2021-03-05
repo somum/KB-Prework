@@ -15,7 +15,7 @@ export class SearchproductComponent implements OnInit {
   searchTerm$ = new Subject<string>();
 
   constructor(private searchService: ProductService) {
-    this.searchService.search(this.searchTerm$)
+    this.searchService.searchTitle(this.searchTerm$)
       .subscribe(results => {
         this.results = results;
         console.log(results)

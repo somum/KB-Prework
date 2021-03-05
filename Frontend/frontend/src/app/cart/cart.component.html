@@ -1,0 +1,146 @@
+<div>
+    <div>
+        <button (click)="cartStatus()" tooltip="Cart" placement="bottom" show-delay="100"
+            class="text-white hover:text-gray-200 p-1 rounded-full focus:outline-none focus:ring-2 focus:ring-white mx-2">
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+        </button>
+        <span class='badge badge-warning' *ngIf="calcTotal()" id='lblCartCount'> {{calcTotal()}} </span>
+    </div>
+    <div class="fixed z-10 inset-0 overflow-y-auto" *ngIf="cartportal">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true" (click)="toogleCartportal()">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+            <section class="absolute inset-y-0 right-0 w-full flex" aria-labelledby="slide-over-heading">
+                <div class="relative flex w-full" (click)="toogleCartportal()"></div>
+                <div class="relative flex flex-shrink-0 w-3xl bg-white" style="width: 580px;">
+                    <div class="absolute top-0 right-0 mr-5 bg-white pt-4 flex pr-4 pb-4 pl-2 rounded-bl-lg"
+                        style="z-index: 1;">
+                        <button
+                            class="rounded-full text-gray-500 hover:text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 bg-gray-200 p-2"
+                            (click)="toogleCartportal()">
+                            <svg class="h-5 w-5" x-description="Heroicon name: x" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <perfect-scrollbar style="max-width: 100%; max-height: 100vh;">
+                        <div class="h-screen flex flex-col py-6 bg-white ">
+                            <div class="px-4 sm:px-6">
+                                <h2 id="slide-over-heading" class="text-2xl font-bold text-gray-800 text-left">
+                                    SHOPPING CART
+                                </h2>
+                            </div>
+                            <div class="mt-6 relative flex-1 px-4 sm:px-6" *ngIf="products">
+                                <div class="portal">
+                                    <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                        <table class="w-full divide-y divide-gray-200" *ngFor="let product of products">
+                                            <thead class="bg-gray-50">
+                                                <tr>
+                                                    <th scope="col"
+                                                        class="pl-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                        Product
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider p-2">
+                                                        Quantity
+                                                    </th>
+
+                                                    <th scope="col"
+                                                        class="py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider p-2">
+                                                        Subtotal
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="pr-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                        <!-- Options -->
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bg-white divide-y divide-gray-200" x-max="1">
+                                                <tr *ngFor="let product of products">
+                                                    <td class="pl-6 py-4 whitespace-nowrap">
+                                                        <div class="flex">
+                                                            <div class="flex-shrink-0 h-16 w-20">
+                                                                <img class="h-16 w-20 rounded"
+                                                                    src="{{ product.imageLink }}" alt="">
+                                                            </div>
+                                                            <div class="ml-4">
+                                                                <div class="text-sm font-medium text-gray-900">
+                                                                    {{product.title | slice:0:32 }}
+                                                                </div>
+                                                                <div class="text-sm text-gray-500">
+                                                                    {{product.tags}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="py-4 whitespace-nowrap">
+                                                        <button (click)="addProductToCart(product)"><span
+                                                                class="font-semibold p-1">+</span></button>
+                                                        <span
+                                                            class="px-4 py-2 inline-flex text-lg leading-5 font-semibold rounded bg-green-100 text-green-800">
+                                                            {{product.num}}
+                                                        </span>
+                                                        <button (click)="subProductToCart(product)"><span
+                                                                class="font-semibold p-1">-</span></button>
+
+
+                                                    </td>
+
+                                                    <td class="py-4 whitespace-nowrap text-sm text-gray-500">
+                                                        <span
+                                                            class="px-2 inline-flex text-sm font-medium text-gray-900">
+                                                            <span>&#165;</span> {{product.price * product.num}}
+                                                        </span>
+                                                    </td>
+                                                    <td class="pr-3 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                        <button type="button" (click)="removeProduct(product)"
+                                                            class="rounded-full text-red-500 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-gray-500 bg-red-200 p-2">
+
+                                                            <svg class="h-5 w-5" x-description="Heroicon name: x"
+                                                                xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                                viewBox="0 0 24 24" stroke="currentColor"
+                                                                aria-hidden="true">
+                                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                                    stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                                            </svg>
+
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- test -->
+                            <div class="flex justify-between items-center mt-6 pt-6 border-t px-7"
+                                *ngFor="let product of products">
+                                <div class="flex items-center"> <i class="fa fa-arrow-left text-sm pr-2"></i> <span
+                                        class="text-md font-medium text-blue-500"></span>
+                                    <button
+                                        class="h-12 w-full bg-blue-800 rounded focus:outline-none text-white hover:bg-blue-600 pr-5 pl-5">Check
+                                        Out</button>
+                                </div>
+                                <div class="flex justify-center items-end"> <span
+                                        class="text-xl font-medium text-black-400 mr-1">Total Ammount:</span> <span
+                                        class="text-xl font-bold text-blue-800 "> <span>&#165;</span> {{product.price *
+                                        product.num}}</span>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </perfect-scrollbar>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

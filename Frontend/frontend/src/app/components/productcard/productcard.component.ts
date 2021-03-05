@@ -20,6 +20,8 @@ export class ProductcardComponent implements OnInit {
   @Input() price: string
   @Input() itemid: any
   @Input() rating: any
+  @Input() product: any
+
 
   star(value) {
     return parseInt(value)
@@ -27,6 +29,7 @@ export class ProductcardComponent implements OnInit {
   blank(value) {
     return 5 - parseInt(value)
   }
+
 
 
 }
