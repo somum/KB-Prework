@@ -2,6 +2,8 @@
 
 ###### This is an ongoing prework. Strictly prohibited to use without contributor's permission.
 
+For efficient use, a docker compose file is available in the backend part.
+
 ## Docker Image
 
 > Backend (Spring boot)
